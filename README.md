@@ -1,0 +1,1 @@
+simple browser extension for fast reading comments on pikabu
