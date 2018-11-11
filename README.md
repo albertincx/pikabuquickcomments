@@ -1,7 +1,7 @@
 simple browser extension for fast reading comments on pikabu
 
-    1. Pack it With chrome browser
-    2. Download yandex browser light
-    3. Add extension to mobile browser
-    4. Open any pikabu newsfeed
-    5. Enjoy!
+    1. Copy cs.js, jq.js, manifest.json to device folder ( to /sdcard/Downloads/ext)
+    2. Download yandex browser
+    3. Go to chrome://extensions
+    4. Load unpacked - select folder (/sdcard/Downloads/ext). Extension added!
+    5. Open any pikabu newsfeed. Enjoy!
