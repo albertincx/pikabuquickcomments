@@ -1,0 +1,4 @@
+core/*.js
+src/content/*.js
+core/*/*.js
+build/*.js

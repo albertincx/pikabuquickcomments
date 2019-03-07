@@ -1,3 +1,4 @@
+console.log('content-script!')
 var cclass = '.post_comments_count';
 var st = `
 .vkdmenu {
@@ -23,20 +24,31 @@ var st = `
     width: 50px;
     margin-right: 0;
     border: -20px;
-    bottom: 0px;
+    bottom: 40px;
+    -moz-transform:rotate(-90deg);
+    -ms-transform:rotate(-90deg);
+    -o-transform:rotate(-90deg);
+    -webkit-transform:rotate(-90deg);
 }
 .vkdwrap {
         height: 100%;
     overflow: hidden;
     overflow-y: scroll;
+         padding-right: 60px; 
+    padding-top: 60px; 
 }
-.vkdmenu .vkcw {    padding-right: 60px;    padding-top: 60px;}
+.vkdmenu .vkcw {    }
+.vkcw.comments {        padding: 0 9px;    background: #fff;    margin-bottom: 90px; }
 .vkcw .comment_tree {    background: #fff;}
+.vkdmenu:not(.show) {display:none!important;}
+.vkload:not(.show) {display:none!important;}
+.vkdmenu.show {display:block!important;}
+.vkload.show {display:block!important;}
 `;
 
 function stw(d, end) {
   return '<' + (end ? '/' : '') + d + '>';
-};
+}
 
 function vkdclose() {
   $('.vkcw').empty();
@@ -52,21 +64,30 @@ function pqcrun() {
         '<' + 'div class="vkcw comments">' + stw('div', 1) +
         stw('div', 1) +
         '<' + 'a class="vkclose">Закрыть' + stw('a', 1) +
+        '<' + 'span class="vkload more_action loading">' + stw('span', 1) +
         stw('div', 1);
 
     $('body').append(vkdmenu);
   }
   $(document).on('click', '.vkclose', function() {
+    $('.vkload').removeClass('show')
+    $('.vkdmenu').removeClass('show')
     return vkdclose();
   });
   $(document).on('click', cclass, function() {
-    let me = $(this);
+    let me = $(this)
+    $('.vkload').addClass('show')
+    $('.vkdmenu').addClass('show')
     $.get(me.attr('href'), function(d) {
-      $('.vkdmenu').addClass('vkh');
-      $('.vkdmenu .vkcw').html($(d).find('div.comments').html());
-    });
-    return false;
-  });
+      $('.vkdmenu').addClass('vkh')
+      $('.vkdmenu .vkcw').html($(d).find('div.comments').html())
+    })
+    return false
+  })
 }
-
-pqcrun();
+$(document).on('click', '.comment__toggle', function() {
+  let par = $(this).closest('.comment')
+  par.next().show();
+  return false
+})
+pqcrun()
