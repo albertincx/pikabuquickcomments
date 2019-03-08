@@ -14,11 +14,7 @@ module.exports = merge(baseWebpack, {
     new CleanWebpackPlugin(['build/*.*']),
     new webpack.NoEmitOnErrorsPlugin(),
     new webpack.DefinePlugin({
-      'process.env.NODE_ENV': '"production"',
-      PRODUCTION: true,
-      DEVELOPMENT: false,
-      CLIENT: true,
-      TEST: false,
+      'process.env.NODE_ENV': 'production',
     }),
     new OptimizeCSSPlugin({
       cssProcessorOptions: {

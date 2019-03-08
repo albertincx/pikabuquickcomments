@@ -1,7 +1,7 @@
 const urlPat = "https://*.pikabu.ru/*"
 module.exports = {
   name: 'Pikabu quick comments',
-  version: '1.0.1',
+  version: '1.0.2',
   description: 'Vue.js Chrome Extension Template (wcer)',
   author: 'yura',
   manifest_version: 2,

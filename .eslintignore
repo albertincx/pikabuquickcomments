@@ -1,4 +1,4 @@
 core/*.js
-src/content/*.js
+src/content/jq.js
 core/*/*.js
 build/*.js
