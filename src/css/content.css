@@ -1,0 +1,99 @@
+
+.vkdmenu {
+    display: inline;
+    position: fixed;
+    z-index: 999999;
+    padding: 10px;
+    background: #3535359e;
+    bottom: 0;
+    width: 100%;
+    padding: 31px 0px;
+}
+
+.vkh {
+    height: 100%;
+}
+
+.vkclose {
+    background: #ddd;
+    padding: 11px;
+    border-radius: 4px;
+    position: fixed;
+    right: -16px;
+    width: 79px;
+    margin-right: 0;
+    border: -20px;
+    bottom: 40px;
+    -moz-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+}
+.full .vkclose {
+    left: 0;
+    right: auto;
+}
+
+.vkdwrap {
+    height: 100%;
+    overflow: hidden;
+    overflow-y: scroll;
+    padding-right: 60px;
+    padding-top: 60px;
+    position: relative;
+    padding-left: 20px;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.vkdmenu .vkcw {
+}
+
+.vkcw.comments {
+    padding: 0 9px;
+    background: #fff;
+    margin: 0 auto;
+    margin-bottom: 90px;
+    display: block !important;
+    float: none;
+}
+
+.vkcw .comment_tree {
+    background: #fff;
+}
+
+.vkdmenu:not(.show) {
+    display: none !important;
+}
+
+.vkload,.comment__control,[data-role="save"] {
+    display: none !important;
+}
+
+.vkdmenu.show {
+    display: block !important;
+}
+
+.vkdmenu.show .vkload {
+    display: block !important;
+}
+
+@media (min-width: 1200px) {
+    .full .vkclose {
+        left: 70px;
+        right: auto;
+    }
+    .vkdwrap {
+        width: 65%;
+    }
+}
+@media (min-width: 1400px) {
+    .full .vkclose {
+        left: 120px;
+    }
+}
+@media (min-width: 1600px) {
+    .full .vkclose {
+        left: 220px;
+    }
+}

@@ -22,7 +22,7 @@ module.exports = merge(baseWebpack, {
       }
     }),
     new ExtractTextPlugin({
-      filename: 'css/[name].[contenthash].css'
+      filename: 'css/[name].css'
     }),
     new webpack.HashedModuleIdsPlugin(),
     new webpack.optimize.CommonsChunkPlugin({

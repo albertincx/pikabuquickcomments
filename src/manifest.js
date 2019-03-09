@@ -1,9 +1,9 @@
 const urlPat = "https://*.pikabu.ru/*"
 module.exports = {
   name: 'Pikabu quick comments',
-  version: '1.0.2',
-  description: 'Vue.js Chrome Extension Template (wcer)',
-  author: 'yura',
+  version: '1.0.3',
+  description: 'Read comments quickly, save your time',
+  author: 'albertincx',
   manifest_version: 2,
   icons: { '16': 'icons/16.png', '128': 'icons/128.png' },
   permissions: [
@@ -11,6 +11,7 @@ module.exports = {
     'contextMenus',
   ],
   content_scripts: [{
+    css: ["css/content.css"],
     js: [ 'js/jq.js', 'js/content.js' ],
     run_at: 'document_end',
     matches: [ urlPat ],
