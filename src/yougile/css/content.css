@@ -27,6 +27,16 @@
     height: 10px;
 }
 
+.minimactive.firstgr {
+    min-width: 100px;
+    width: 200px;
+}
+
+.minimactive.task-group {
+    min-width: 220px;
+    width: 220px;
+}
+
 a.holder_ {
     position: absolute;
     top: 0;
