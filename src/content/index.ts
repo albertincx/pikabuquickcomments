@@ -1,4 +1,5 @@
 import '../css/content.css';
+//var d = document.createElement('style');d.innerHTML='.sticker-item-list__wnd{overflow:visible}';document.body.append(d)
 let post_comment_class = '.post_comments_count';
 let full = 0;
 var st = `

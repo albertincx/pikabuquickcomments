@@ -4,11 +4,20 @@ const { cssLoaders } = require('./tools')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 let resolve = dir => path.join(__dirname, '..', 'src', dir)
+// console.log(resolve('./yougile/content'))
+let entry = {
+  content: resolve('./content'),
+  jq: resolve('./content/jq.js'),
+}
+let manifest = path.join(__dirname, '..', 'src', 'manifest.js')
+if (process.env.APP === 'you') {
+  entry = {
+    content: resolve('./yougile/content'),
+  }
+  manifest = path.join(__dirname, '..', 'src', 'yougile', 'manifest.js')
+}
 module.exports = {
-  entry: {
-    content: resolve('./content'),
-    jq: resolve('./content/jq.js'),
-  },
+  entry,
   output: {
     path: path.join(__dirname, '..', 'build'),
     publicPath: '/',
@@ -102,7 +111,7 @@ module.exports = {
     new CopyWebpackPlugin([{ from: path.join(__dirname, '..', 'static') }]),
     new ChromeReloadPlugin({
       port: 9090,
-      manifest: path.join(__dirname, '..', 'src', 'manifest.js'),
+      manifest,
     }),
   ],
   performance: { hints: false },

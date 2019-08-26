@@ -1,11 +1,10 @@
-const urlPat = 'https://*.pikabu.ru/*'
+const urlPat = 'https://*.yougile.com/*'
 module.exports = {
-  name: 'Pikabu quick comments',
-  version: '1.0.3',
-  description: 'Read comments quickly, save your time',
+  name: 'yougile fixer',
+  version: '1.0.1',
+  description: 'fix yougile bugs',
   author: 'albertincx',
   manifest_version: 2,
-  icons: { '16': 'icons/16.png', '128': 'icons/128.png' },
   permissions: [
     urlPat,
     'contextMenus'
@@ -13,7 +12,7 @@ module.exports = {
   content_scripts: [
     {
       css: ['css/content.css'],
-      js: ['js/jq.js', 'js/content.js'],
+      js: ['js/content.js'],
       run_at: 'document_end',
       matches: [urlPat],
       all_frames: false
