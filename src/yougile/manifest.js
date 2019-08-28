@@ -1,7 +1,7 @@
 const urlPat = 'https://*.yougile.com/*'
 module.exports = {
   name: 'yougile fixer',
-  version: '1.0.2',
+  version: '1.0.3',
   description: 'fix yougile bugs',
   author: 'albertincx',
   manifest_version: 2,
