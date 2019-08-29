@@ -50,28 +50,18 @@ function cleaFilter () {
     await Promise.all([zamk(null, '.sticker-panel-item-overlay')])
   }
 
-  const d2 = 'fffclear'
-  const el = getS('.sticker-create')
+  // const el = getS('.sticker-create')
+  const el = getS('.main-menu__item.main-menu__item--help')
   let el2 = getS(`#${d2}`)
   if (!el2) {
-    el2 = el.cloneNode(true)
-    el2.setAttribute('id', d2)
-    el2.classList.add('erasefilter')
-    el2.querySelector('.sticker-create-icon').remove()
-    appnd(el, el2.outerHTML)
+    // el2 = el.cloneNode(true)
+    // el2.setAttribute('id', d2)
+    // el2.classList.add('erasefilter')
+    // appnd(el, el2.outerHTML)
+    appnd(el, btnErase)
     document.getElementById(d2).addEventListener('click', fffclearfn)
   }
 }
-
-const TRIGGER = 'collapseStolbs'
-const clsNameToggle = 'main-menu__item main-menu__item--help'
-var btn = stw('div', { class: clsNameToggle, id: TRIGGER }) + 'TOGGLE' +
-  stw('div', {}, true)
-
-var MINIM = 'minim'
-var MINIMA = 'minimactive'
-var MINIMHOLD = 'minimhold'
-var FIRSTGR = 'firstgr'
 
 function mainOver (e) {
   const el = e.target.closest('.task-group')
@@ -106,6 +96,18 @@ function mainClick (e) {
 }
 
 let cntf = 0
+const TRIGGER = 'collapseStolbs'
+const clsNameToggle = 'main-menu__item main-menu__item--help'
+const d2 = 'fffclear'
+
+var btn = stw('div', { class: clsNameToggle, id: TRIGGER }) + 'TOGGLE' +
+  stw('div', {}, true)
+var btnErase = stw('div', { class: `${clsNameToggle} erasefilter`, id: d2 }) + 'Очистить фильтр' +
+  stw('div', {}, true)
+var MINIM = 'minim'
+var MINIMA = 'minimactive'
+var MINIMHOLD = 'minimhold'
+var FIRSTGR = 'firstgr'
 
 function collapse () {
   if (cntf === 0) cleaFilter()
